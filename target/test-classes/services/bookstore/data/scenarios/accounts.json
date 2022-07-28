@@ -1,0 +1,14 @@
+{
+  "valid_account_1": {
+    "username": "tcc_pujucan_eta_2021_1",
+    "password": "@123456ABCabc",
+    "userId": "dynamic_value",
+    "token": "dynamic_value"
+  },
+  "invalid_account_1": {
+    "username": "tcc_vitoria_eta_2021_1",
+    "password": "@123456ABCabc",
+    "userId": "dynamic_value",
+    "token": "dynamic_value"
+  }
+}

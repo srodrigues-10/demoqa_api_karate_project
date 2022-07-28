@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[1:12]","start":1657114515116,"end":1657114518988,"title":"src\/test\/java\/services\/bookstore\/bookstore[1:12] 10:35:15.116-10:35:18.988 CY001 - Create account successfully"},{"id":2,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[2:27]","start":1657114518993,"end":1657114519602,"title":"src\/test\/java\/services\/bookstore\/bookstore[2:27] 10:35:18.993-10:35:19.602 CY002 - Error creating account for existing account"},{"id":3,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[3:39]","start":1657114519608,"end":1657114520364,"title":"src\/test\/java\/services\/bookstore\/bookstore[3:39] 10:35:19.608-10:35:20.364 CY003 - Generate account token successfully"},{"id":4,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[4:55]","start":1657114520370,"end":1657114520979,"title":"src\/test\/java\/services\/bookstore\/bookstore[4:55] 10:35:20.370-10:35:20.979 CY004 - Account authorized successfully"},{"id":5,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[5:67]","start":1657114520983,"end":1657114521639,"title":"src\/test\/java\/services\/bookstore\/bookstore[5:67] 10:35:20.983-10:35:21.639 CY005 - Account not authorized for reason 'Not Found'"},{"id":6,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[6:80]","start":1657114521643,"end":1657114522246,"title":"src\/test\/java\/services\/bookstore\/bookstore[6:80] 10:35:21.643-10:35:22.246 CY006 - Consult existing account in the database"},{"id":7,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[7:92]","start":1657114522250,"end":1657114522885,"title":"src\/test\/java\/services\/bookstore\/bookstore[7:92] 10:35:22.250-10:35:22.885 CY007 - Consult all books in the database"},{"id":8,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[8:99]","start":1657114522888,"end":1657114523494,"title":"src\/test\/java\/services\/bookstore\/bookstore[8:99] 10:35:22.888-10:35:23.494 CY008 - Relate book to account successfully"},{"id":9,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[9:111]","start":1657114523497,"end":1657114524080,"title":"src\/test\/java\/services\/bookstore\/bookstore[9:111] 10:35:23.497-10:35:24.080 CY009 - Consult book by isbn"},{"id":10,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[10:120]","start":1657114524084,"end":1657114524736,"title":"src\/test\/java\/services\/bookstore\/bookstore[10:120] 10:35:24.084-10:35:24.736 CY010 - Delete account book by isbn successfully"},{"id":11,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[11:132]","start":1657114524739,"end":1657114525349,"title":"src\/test\/java\/services\/bookstore\/bookstore[11:132] 10:35:24.739-10:35:25.349 CY011 - Delete all account books successfully"},{"id":12,"group":1,"content":"src\/test\/java\/services\/bookstore\/bookstore[12:143]","start":1657114525354,"end":1657114525965,"title":"src\/test\/java\/services\/bookstore\/bookstore[12:143] 10:35:25.354-10:35:25.965 CY012 - Delete account successfully"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
